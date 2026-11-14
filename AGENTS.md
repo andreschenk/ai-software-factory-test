@@ -26,4 +26,5 @@ mvn -B verify
 - Testklassen heissen `<Klasse>Test`, Testmethoden beschreiben das erwartete Verhalten (`returnsApplicationName`).
 - Keine neuen Abhängigkeiten ohne Anforderung im Issue.
 - Bestehende Tests nicht abschwächen oder entfernen, um einen Build grün zu machen.
-- Code, Bezeichner und Javadoc auf Englisch; Issues und Kommentare auf Deutsch.
+- **Kommentare, Javadoc, Doku und Commit-Nachrichten auf Deutsch.** Bezeichner (Klassen, Methoden, Variablen) auf Englisch.
+- Kommentare erklären das **Warum** (Designentscheidung), nicht das Offensichtliche.
