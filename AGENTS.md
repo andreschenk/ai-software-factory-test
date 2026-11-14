@@ -10,9 +10,63 @@ Fehlerfälle werden im Service simuliert.
 
 ## Technik
 
-- Java 25, Maven
-- Basis-Paket: `ch.noveit.ai.softwarefactory.test`
-- Tests: JUnit 5 (Jupiter); Assertions aus `org.junit.jupiter.api.Assertions`
+- Java 25, Maven, **Spring Boot 4.1** (Spring Framework 7)
+- Basis-Paket: `ch.noveit.ai.softwarefactory.test`, Startklasse `App` (`@SpringBootApplication`)
+- Tests: JUnit 6 (Jupiter, kommt mit `spring-boot-starter-test`); Assertions aus `org.junit.jupiter.api.Assertions`
+- JUnit-Version nicht selbst festlegen (kein `junit-bom`): Spring Boot 4 braucht JUnit 6, ein älterer Pin
+  lässt jeden `@SpringBootTest` mit `NoSuchMethodError` scheitern.
+
+## REST-Endpunkte testen (Spring Boot 4)
+
+Geprüftes Muster – Imports genau so übernehmen. Es braucht nur `spring-boot-starter-test`, keine weitere
+Abhängigkeit.
+
+```java
+package ch.noveit.ai.softwarefactory.test;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
+
+@SpringBootTest
+class GreetingControllerTest {
+
+    @Autowired
+    private WebApplicationContext context;
+
+    private MockMvc mockMvc;
+
+    @BeforeEach
+    void setUp() {
+        // MockMvc aus dem Anwendungskontext statt @AutoConfigureMockMvc: braucht in Spring Boot 4 kein Zusatzmodul.
+        mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
+    }
+
+    @Test
+    void returnsGreetingAsJson() throws Exception {
+        mockMvc.perform(get("/greeting"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.message").value("Hallo"));
+    }
+
+    @Test
+    void returnsNotFoundForUnknownPath() throws Exception {
+        mockMvc.perform(get("/unknown"))
+                .andExpect(status().isNotFound());
+    }
+}
+```
 
 ## Build
 
