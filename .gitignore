@@ -1,0 +1,13 @@
+target/
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+
+
+  1. Wo liegen die Dokumente des grossen Projekts: im Repo, auf einem Laufwerk, in Confluence, in SharePoint? kann überall liegen. vorzugsweise repo.
+  2. Welche Formate kommen vor: Markdown, PDF, Word, …? Markdown, PDF, Word. vorzugsweise markdown.
+  3. Wie viele sind es ungefähr, und sind einzelne vertraulich, sodass sie z. B. nicht an externe Modelle gehen dürfen? die dikumente sind vertraulich aber produktiv ist sie abgesichert llm sicher
+  4. Sollen Validator und Issue-Entwerfer wie vorgeschlagen direkte LLM-Aufrufe sein und keine Coding-Agenten? ja
+

@@ -1,0 +1,18 @@
+# Projektkonfiguration für die AI Software Factory (siehe docs/KONZEPT.md im Factory-Repo, Abschnitt 7).
+# Zugangsdaten gehören nie hierher, sondern in die Factory-Konfiguration.
+
+language: de
+
+build:
+  test: mvn -B test
+  acceptance: mvn -B verify
+
+issueTypes:
+  feature:
+    roles: [validator, tester, implementer]
+    paths:
+      implementer:
+        - src/main/**
+        - pom.xml
+      tester:
+        - src/test/**
