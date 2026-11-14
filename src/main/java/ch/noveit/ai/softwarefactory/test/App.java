@@ -1,17 +1,18 @@
 package ch.noveit.ai.softwarefactory.test;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 /**
  * Einstiegspunkt des Testprojekts. Wird über Issues schrittweise zu einer Spring-Boot-REST-Applikation ausgebaut.
  */
-public final class App {
+@SpringBootApplication
+public class App {
 
     static final String NAME = "ai-softwarefactory-test";
 
-    private App() {
-    }
-
     public static void main(String[] args) {
-        System.out.println(name());
+        SpringApplication.run(App.class, args);
     }
 
     static String name() {
