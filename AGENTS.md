@@ -16,6 +16,15 @@ Fehlerfälle werden im Service simuliert.
 - JUnit-Version nicht selbst festlegen (kein `junit-bom`): Spring Boot 4 braucht JUnit 6, ein älterer Pin
   lässt jeden `@SpringBootTest` mit `NoSuchMethodError` scheitern.
 
+## Versionen
+
+Fest vorgegeben; nicht nachschlagen und nicht ändern:
+
+- **Spring Boot 4.1.2** als Parent (`spring-boot-starter-parent`). Starter und von Spring Boot verwaltete
+  Bibliotheken **ohne eigene `<version>`** eintragen; die Version kommt aus dem Parent.
+- **Maven 3.10.0**.
+- Java 25.
+
 ## REST-Endpunkte testen (Spring Boot 4)
 
 Geprüftes Muster – Imports genau so übernehmen. Es braucht nur `spring-boot-starter-test`, keine weitere
