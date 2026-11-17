@@ -1,4 +1,4 @@
-package ch.noveit.ai.softwarefactory.test;
+package ch.noveit.ai.charly.factory.test;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-# Projektkonfiguration für die AI Software Factory (siehe docs/KONZEPT.md im Factory-Repo, Abschnitt 7).
+# Projektkonfiguration für die Charly Factory (siehe docs/KONZEPT.md im Factory-Repo, Abschnitt 7).
 # Zugangsdaten gehören nie hierher, sondern in die Factory-Konfiguration.
 
 language: de

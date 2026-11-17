@@ -1,4 +1,4 @@
-package ch.noveit.ai.softwarefactory.test;
+package ch.noveit.ai.charly.factory.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -8,6 +8,6 @@ class AppTest {
 
     @Test
     void returnsApplicationName() {
-        assertEquals("ai-softwarefactory-test", App.name());
+        assertEquals("charly-factory-test", App.name());
     }
 }

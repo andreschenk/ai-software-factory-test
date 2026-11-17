@@ -1,6 +1,6 @@
 ---
 name: Factory-Anforderung
-about: Anforderung zur Umsetzung durch die AI Software Factory
+about: Anforderung zur Umsetzung durch die Charly Factory
 title: ""
 labels: []
 ---

@@ -1,4 +1,4 @@
-package ch.noveit.ai.softwarefactory.test;
+package ch.noveit.ai.charly.factory.test;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

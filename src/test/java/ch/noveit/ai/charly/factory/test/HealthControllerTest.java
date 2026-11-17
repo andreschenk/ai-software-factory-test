@@ -1,4 +1,4 @@
-package ch.noveit.ai.softwarefactory.test;
+package ch.noveit.ai.charly.factory.test;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;

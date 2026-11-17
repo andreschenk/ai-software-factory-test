@@ -4,14 +4,14 @@ Projektwissen für Coding-Agenten. Gilt für alle Agenten und Rollen.
 
 ## Projekt
 
-Testprojekt der AI Software Factory. Startet als einfaches Java-Programm und wächst über Issues
+Testprojekt der Charly Factory. Startet als einfaches Java-Programm und wächst über Issues
 schrittweise zu einer Spring-Boot-REST-Applikation. **Keine Datenbank:** Daten liegen im Speicher,
 Fehlerfälle werden im Service simuliert.
 
 ## Technik
 
 - Java 25, Maven, **Spring Boot 4.1** (Spring Framework 7)
-- Basis-Paket: `ch.noveit.ai.softwarefactory.test`, Startklasse `App` (`@SpringBootApplication`)
+- Basis-Paket: `ch.noveit.ai.charly.factory.test`, Startklasse `App` (`@SpringBootApplication`)
 - Tests: JUnit 6 (Jupiter, kommt mit `spring-boot-starter-test`); Assertions aus `org.junit.jupiter.api.Assertions`
 - JUnit-Version nicht selbst festlegen (kein `junit-bom`): Spring Boot 4 braucht JUnit 6, ein älterer Pin
   lässt jeden `@SpringBootTest` mit `NoSuchMethodError` scheitern.
@@ -31,7 +31,7 @@ Geprüftes Muster – Imports genau so übernehmen. Es braucht nur `spring-boot-
 Abhängigkeit.
 
 ```java
-package ch.noveit.ai.softwarefactory.test;
+package ch.noveit.ai.charly.factory.test;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
